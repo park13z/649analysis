@@ -11,6 +11,22 @@
     <header class="hero">
       <h1>🍀 Lotto 6/49</h1>
       <p>โหมดวิเคราะห์ความน่าจะเป็นจากข้อมูลย้อนหลัง (ไม่มีฐานข้อมูลและไม่มี backend)</p>
+    </header>
+
+    <section class="card">
+      <h2>✍️ สำรอง: กรอกผลเองเมื่อเว็บต้นทางมีปัญหา</h2>
+      <form id="drawForm">
+        <div class="form-row">
+          <label>วันที่</label>
+          <input id="drawDate" type="date" required />
+        </div>
+        <div id="nums" class="form-row"></div>
+        <div class="btn-row">
+          <button class="btn-primary" type="submit">💾 บันทึกและคำนวณใหม่</button>
+          <button class="btn-danger" type="button" id="resetLocalBtn">ล้างข้อมูลที่กรอกเอง</button>
+        </div>
+      </form>
+      <p id="updateStatus"></p>
     </section>
 
     <section class="card">
@@ -33,6 +49,14 @@
       <div id="pickBox" class="pick-grid"></div>
       <h3>📋 Backtest ย้อนหลัง</h3>
       <div id="backtestBox" class="bt-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>🗂 ประวัติ 10 งวดล่าสุด (รวมที่กรอกเอง)</h2>
+      <table>
+        <thead><tr><th>วันที่</th><th>เลขที่ออก</th><th>Bonus</th></tr></thead>
+        <tbody id="historyBody"></tbody>
+      </table>
     </section>
   </main>
 
