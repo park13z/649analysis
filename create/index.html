@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lotto 6/49 Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>🍀 Lotto 6/49</h1>
+      <p>วิเคราะห์สถิติและคาดการณ์ความน่าจะเป็นสำหรับงวดถัดไป</p>
+    </header>
+
+    <section class="card">
+      <h2>⊕ บันทึกผลงวดใหม่</h2>
+      <form id="drawForm">
+        <div class="form-row">
+          <label>วันที่</label>
+          <input id="drawDate" type="date" required />
+        </div>
+        <div id="nums" class="form-row"></div>
+        <div class="btn-row">
+          <button class="btn-primary" type="submit">💾 บันทึกผล</button>
+          <button class="btn-secondary" type="button" id="updateBtn">🔄 อัปเดตผลล่าสุด</button>
+        </div>
+      </form>
+      <p id="updateStatus"></p>
+    </section>
+
+    <section class="card">
+      <h2>📊 สถิติและการทำนาย</h2>
+      <p id="summary"></p>
+      <div id="topBanner" class="top-banner" style="display:none">
+        <div class="banner-label">ชุดแนะนำจากสถิติทั้งหมด</div>
+        <div id="topBalls" class="balls"></div>
+      </div>
+      <div id="bonusBanner" class="bonus-banner" style="display:none">
+        <div class="banner-label">🔮 Bonus คาดการณ์ (Top 5)</div>
+        <div id="bonusBalls" class="balls"></div>
+      </div>
+      <canvas id="freqChart" height="160"></canvas>
+      <div id="freqGrid" class="stat-chips"></div>
+      <h3>📈 แนวโน้ม Top 6</h3>
+      <div id="trendBox" class="trend-grid"></div>
+      <h3>🎯 ชุดทำนายแต่ละโหมด</h3>
+      <div id="pickBox" class="pick-grid"></div>
+      <h3>📋 Backtest ย้อนหลัง</h3>
+      <div id="backtestBox" class="bt-grid"></div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>🗂 ประวัติ 10 งวดล่าสุด</h2>
+        <button id="resetBtn" class="btn-danger">ล้างข้อมูล</button>
+      </div>
+      <table>
+        <thead><tr><th>วันที่</th><th>เลขที่ออก</th><th>Bonus</th></tr></thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="logic.js"></script>
+  <script src="chart.js"></script>
+  <script src="ui.js"></script>
+  <script src="webapi.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

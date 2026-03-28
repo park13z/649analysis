@@ -1,0 +1,32 @@
+.page-home .fixed-header {
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
+}
+
+.page-home #contentWrapper {
+    padding-top: 170px;
+}
+
+@media (max-width: 992px) {
+    .page-home #contentWrapper {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    /*.page-home #contentWrapper {*/
+    /*    padding-top: 58px;*/
+    /*}*/
+
+    /*Lottery page*/
+    #navigation-mobile {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 9999;
+    }
+}
+
