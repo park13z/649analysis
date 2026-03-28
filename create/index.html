@@ -10,27 +10,12 @@
   <main class="wrap">
     <header class="hero">
       <h1>🍀 Lotto 6/49</h1>
-      <p>วิเคราะห์สถิติและคาดการณ์ความน่าจะเป็นสำหรับงวดถัดไป</p>
-    </header>
-
-    <section class="card">
-      <h2>⊕ บันทึกผลงวดใหม่</h2>
-      <form id="drawForm">
-        <div class="form-row">
-          <label>วันที่</label>
-          <input id="drawDate" type="date" required />
-        </div>
-        <div id="nums" class="form-row"></div>
-        <div class="btn-row">
-          <button class="btn-primary" type="submit">💾 บันทึกผล</button>
-          <button class="btn-secondary" type="button" id="updateBtn">🔄 อัปเดตผลล่าสุด</button>
-        </div>
-      </form>
-      <p id="updateStatus"></p>
+      <p>โหมดวิเคราะห์ความน่าจะเป็นจากข้อมูลย้อนหลัง (ไม่มีฐานข้อมูลและไม่มี backend)</p>
     </section>
 
     <section class="card">
-      <h2>📊 สถิติและการทำนาย</h2>
+      <h2>📊 สถิติและความน่าจะเป็น</h2>
+      <p id="oddsInfo"></p>
       <p id="summary"></p>
       <div id="topBanner" class="top-banner" style="display:none">
         <div class="banner-label">ชุดแนะนำจากสถิติทั้งหมด</div>
@@ -48,17 +33,6 @@
       <div id="pickBox" class="pick-grid"></div>
       <h3>📋 Backtest ย้อนหลัง</h3>
       <div id="backtestBox" class="bt-grid"></div>
-    </section>
-
-    <section class="card">
-      <div class="row">
-        <h2>🗂 ประวัติ 10 งวดล่าสุด</h2>
-        <button id="resetBtn" class="btn-danger">ล้างข้อมูล</button>
-      </div>
-      <table>
-        <thead><tr><th>วันที่</th><th>เลขที่ออก</th><th>Bonus</th></tr></thead>
-        <tbody id="historyBody"></tbody>
-      </table>
     </section>
   </main>
 
