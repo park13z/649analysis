@@ -1,0 +1,36 @@
+name: Update lotto history data
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-history:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest history
+        run: node create/fetch_welovelotto_history.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add create/data/lotto649_history.json create/data/lotto649_history.csv
+          if git diff --staged --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+          git commit -m "chore(data): update lotto649 history"
+          git push
